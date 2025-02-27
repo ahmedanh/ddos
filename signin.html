@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In - Hping3 Commands</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function signIn(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if(username === "kali" && password === "kali") {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("error").textContent = "Invalid credentials. Please try again.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="signin-container">
+    <h1>Sign In</h1>
+    <form onsubmit="signIn(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Sign In</button>
+      <p id="error" class="error"></p>
+    </form>
+  </div>
+</body>
+</html>
